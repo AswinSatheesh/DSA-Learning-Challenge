@@ -7,7 +7,7 @@ public class ArrayPrblm1 {
            for (int j = i+1; j < length; j++){
                if (arr[i] + arr[j] == sum){
                 //    System.out.println("Two numbers are : " + arr[i] + ", " + arr[j]);
-                return new int[]{arr[i], arr[j]};
+                return new int[]{arr[i], arr[j]}; //This is how we can return array
                }
            }
         }
