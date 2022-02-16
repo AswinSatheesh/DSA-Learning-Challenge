@@ -1,3 +1,4 @@
+//It is a array prgm where  we have to find the two elements there sum is 10. 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;  
