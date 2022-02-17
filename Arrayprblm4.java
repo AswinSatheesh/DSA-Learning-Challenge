@@ -1,3 +1,5 @@
+//This  is a prgm that i solved the logic myself - same value shifting to the rightend of the array.
+
 import java.util.Arrays;
 
 public class Arrayprblm4 {
@@ -13,7 +15,7 @@ public class Arrayprblm4 {
                     temp = arr[j];
                     arr[j] = arr[i];
                     arr[i] = temp;
-                    i++;
+                    i++;  
                     j--;
                 }
             }
