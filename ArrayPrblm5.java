@@ -14,7 +14,6 @@ public class ArrayPrblm5 {
         Array[4] = 50;
         Array[2] = 60; //Replace existing value into this new value in Array of second position.
         System.out.println(Array[Array.length-1]); // This will print the last element of the array
-        System.out.println(Array[Array.length-1]);
         printArray(Array);
         // Array[5] = 100; // If we try to add values to the array index which doesn't exist(here till index 4 its available we try 5th index) so it will show  "java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5" 
     }
