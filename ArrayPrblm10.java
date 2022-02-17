@@ -1,3 +1,12 @@
+/* 
+    Given an array or string, the task is to reverse the array or string .
+
+    Ex: given array = {2,11,5,10,7,8}
+        result array = {8,7,10,5,11,2}
+
+*/
+
+
 import java.util.Arrays;
 
 public class ArrayPrblm10 {
