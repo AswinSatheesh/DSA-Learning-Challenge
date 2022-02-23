@@ -8,6 +8,14 @@ public class Main {
         // int[] arr = (10,20,30,40,50);
         int[] Arr = {10,20,30,40,50};
         System.out.println(Arrays.toString(Arr));
+
+
+        int[][] arr = new int[5][4];  
+        
+        
+
+        System.out.println(Arrays.toString(arr));
+
     }
     
 }
