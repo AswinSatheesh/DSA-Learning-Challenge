@@ -30,7 +30,7 @@ public class LinkedList {
         head = node;
     }
 
-    public void insertAt(int index, int data){ // 
+    public void insertAt(int index, int data){ // Insert new node at specific index
         Node node = new Node(); // This is how you can create new node.
         node.data = data;
         node.next = null; 
@@ -40,7 +40,7 @@ public class LinkedList {
         }
         else{
         Node n = head;
-        
+
         for(int i = 0; i < index-1; i++){
             n = n.next;
         }
@@ -49,6 +49,23 @@ public class LinkedList {
         }
         
     }
+
+    public void deleteAt(int index){  //Delete node from specific index.
+        if(index == 0){
+            head = head.next;
+        }else{
+
+            Node n = head;
+            Node n1 = null;
+            for(int i = 0; i < index-1; i++){
+                n = n.next;
+            }
+            n1 = n.next;
+            n.next = n1.next;
+            System.out.println("n1 "+ n1.data);
+        }
+    }
+
 
     public void show(){
         Node node = head;
