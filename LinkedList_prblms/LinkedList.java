@@ -62,7 +62,8 @@ public class LinkedList {
             }
             n1 = n.next;
             n.next = n1.next;
-            System.out.println("n1 "+ n1.data);
+            // System.out.println("n1 "+ n1.data);
+            n1 = null;   //n1 object is still there so , we are assinging null value to n1.
         }
     }
 
