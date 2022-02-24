@@ -28,6 +28,17 @@ public class SLinkedList { //Class
         }
     }
 
+    public int countNode(){  // This how count the number of nodes
+        int count = 0;
+        Node current = head;
+
+        while(current != null){
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
     public void display(){  // TO display all nodes
         Node current = head;
 
@@ -55,6 +66,8 @@ public class SLinkedList { //Class
             sList.addNode(4);
 
             sList.display();  // calling display function to display all nodes
+
+            System.out.println("No of nodes present in this LinkedList is : " + sList.countNode());
 
         }
 
