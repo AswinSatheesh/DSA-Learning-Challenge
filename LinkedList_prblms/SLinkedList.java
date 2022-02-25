@@ -39,6 +39,38 @@ public class SLinkedList { //Class
         return count;
     }
 
+    public void reverse(Node current){ // This is how we reverse a list and print it in reverse order.
+        if(head == null){
+            System.out.println("List is empty.");
+            return;
+        }
+        else{
+            if(current.next == null){
+                System.out.print(current.data + " ");
+                return;
+            }
+            reverse(current.next);
+            System.out.print(current.data + " ");
+            
+        }
+    }
+
+    public void deleteFromStrart(){ //This is how you can delete node from the begining of the list.
+        if(head == null){
+            System.out.println("List is empty.");
+            return;
+        }
+        else{
+            if(head != tail){
+                head = head.next;
+                return;
+            }
+            else{
+                head = tail = null;
+            }
+        }
+    }
+
     public void display(){  // TO display all nodes
         Node current = head;
 
@@ -69,6 +101,18 @@ public class SLinkedList { //Class
 
             System.out.println("No of nodes present in this LinkedList is : " + sList.countNode());
 
+            System.out.println();  //space(for neat code .)
+
+            System.out.println("Reversed List is : " );
+
+            System.out.println();  //space(for neat code .)
+            sList.reverse(sList.head);
+
+            System.out.println();  //space(for neat code .) 
+
+            System.out.println("First node removed!!");
+            sList.deleteFromStrart();
+            sList.display();
         }
 
 }
