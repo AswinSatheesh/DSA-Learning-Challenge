@@ -108,6 +108,26 @@ public class SLinkedList { //Class
         size--;
     }
 
+    public void deleteFromEnd(){  //This is how we delete node from the End of a LinkedList.
+        if(head == null){
+            System.out.println("List is empty");
+            return;
+        }
+        else{
+            if(head != tail){
+                Node current = head;
+                while(current.next != tail){
+                    current = current.next;
+                }
+                tail = current;
+                tail.next = null;
+            }
+            else{
+                head = tail = null;
+            }
+        }
+    }
+
     public void display(){  // TO display all nodes
         Node current = head;
 
@@ -157,6 +177,9 @@ public class SLinkedList { //Class
             sList.display();
 
             System.out.println("Total count is : " + size);
+
+            sList.deleteFromEnd();
+            sList.display();
         }
 
 }
