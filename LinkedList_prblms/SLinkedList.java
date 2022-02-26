@@ -14,6 +14,7 @@ public class SLinkedList { //Class
 
     public Node head = null;
     public Node tail = null;
+    public static int size;
 
     public void addNode(int data){  //addNode() is to add new nodes
         Node newNode = new Node(data);
@@ -26,6 +27,7 @@ public class SLinkedList { //Class
 
             tail = newNode;
         }
+        size++;
     }
 
     public int countNode(){  // This how count the number of nodes
@@ -71,6 +73,41 @@ public class SLinkedList { //Class
         }
     }
 
+    public void deleteFromMiddle(){ // This is how we delete node from the middle of the LinkedList.
+        Node temp, current;
+
+        if(head == null){
+            System.out.println("List is empty");
+            return;
+        }
+        else{
+            int count = (size % 2 == 0)? (size / 2) : ((size + 1) / 2);
+
+            if(head != tail){
+                temp = head;
+                current = null;
+
+                for(int i = 0; i < count - 1; i++){
+                    current = temp;
+                    temp = temp.next;
+                }
+
+                if(current != null){
+                    current.next = temp.next;
+                    temp = null;
+                }
+                else{
+                    head = tail = temp.next;
+                    temp = null;
+                }
+            }
+            else{
+                head = tail = null;
+            }
+        }
+        size--;
+    }
+
     public void display(){  // TO display all nodes
         Node current = head;
 
@@ -96,23 +133,30 @@ public class SLinkedList { //Class
             sList.addNode(2);
             sList.addNode(3);
             sList.addNode(4);
+            sList.addNode(5);
 
             sList.display();  // calling display function to display all nodes
 
             System.out.println("No of nodes present in this LinkedList is : " + sList.countNode());
 
-            System.out.println();  //space(for neat code .)
+            System.out.println();
 
             System.out.println("Reversed List is : " );
-
-            System.out.println();  //space(for neat code .)
             sList.reverse(sList.head);
 
-            System.out.println();  //space(for neat code .) 
+            System.out.println();
 
             System.out.println("First node removed!!");
             sList.deleteFromStrart();
             sList.display();
+           
+            System.out.println("Total count is : " + size);
+            // int size = sList.countNode();
+
+            sList.deleteFromMiddle();
+            sList.display();
+
+            System.out.println("Total count is : " + size);
         }
 
 }
