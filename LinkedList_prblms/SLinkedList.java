@@ -128,6 +128,20 @@ public class SLinkedList { //Class
         }
     }
 
+    public void addAtStart(int data){  //This is to add a new node to the first position.
+        Node newNode = new Node(data);
+
+        if(head == null){
+            head = newNode;
+            tail = newNode;
+        }
+        else{
+            Node temp = head;
+            head = newNode;
+            head.next = temp;
+        }
+    }
+
     public void display(){  // TO display all nodes
         Node current = head;
 
@@ -155,6 +169,7 @@ public class SLinkedList { //Class
             sList.addNode(4);
             sList.addNode(5);
 
+            System.out.println("Original Linked List :");
             sList.display();  // calling display function to display all nodes
 
             System.out.println("No of nodes present in this LinkedList is : " + sList.countNode());
@@ -179,6 +194,9 @@ public class SLinkedList { //Class
             System.out.println("Total count is : " + size);
 
             sList.deleteFromEnd();
+            sList.display();
+
+            sList.addAtStart(15);
             sList.display();
         }
 
