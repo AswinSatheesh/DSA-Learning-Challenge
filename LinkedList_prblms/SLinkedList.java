@@ -142,6 +142,31 @@ public class SLinkedList { //Class
         }
     }
 
+    public void searchNode(int data){ //This is how we search whether a particular data is present or not.
+        Node current = head;
+        int i = 1;
+        boolean flag = false;
+
+        if(head == null){
+            System.out.println("List is empty.");
+        }else{
+            while(current != null){
+                if(current.data == data){
+                    flag = true;
+                    break;
+                }else{
+                    i++;
+                    current = current.next;
+                }
+            }
+            if(flag){
+                System.out.println("Element is present in the list position : "+ i);
+            }else{
+                System.out.println("Element is not present in the list.");
+            }
+        }
+    }
+
     public void display(){  // TO display all nodes
         Node current = head;
 
@@ -165,6 +190,7 @@ public class SLinkedList { //Class
             SLinkedList sList = new SLinkedList(); //Creating objects to call the methods inside
             sList.addNode(1);  // adding nodes
             sList.addNode(2);
+            sList.addNode(60);
             sList.addNode(3);
             sList.addNode(4);
             sList.addNode(5);
@@ -198,6 +224,9 @@ public class SLinkedList { //Class
 
             sList.addAtStart(15);
             sList.display();
+
+            sList.searchNode(15);
+            sList.searchNode(60);
         }
 
 }
