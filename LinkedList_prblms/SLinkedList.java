@@ -185,6 +185,25 @@ public class SLinkedList { //Class
         }
     }
 
+    public void maxNode(){ //This is how we find the maximum node from the list.
+        Node current = head;
+        int max;
+
+        if(head == null){
+            System.out.println("List is empty.");
+        }
+        else{
+            max = head.data;
+            while(current != null){
+                if(max < current.data){
+                    max = current.data;
+                }
+                current = current.next;
+            }
+            System.out.println("Maximum value node in the list : " + max);
+        }
+    }
+
     public void display(){  // TO display all nodes
         Node current = head;
 
@@ -209,7 +228,7 @@ public class SLinkedList { //Class
             sList.addNode(11);  // adding nodes
             sList.addNode(12);
             sList.addNode(60);
-            sList.addNode(3);
+            sList.addNode(378);
             sList.addNode(4);
             sList.addNode(5);
 
@@ -247,6 +266,7 @@ public class SLinkedList { //Class
             // sList.searchNode(60);
 
             sList.minNode();
+            sList.maxNode();
 
         }
 
