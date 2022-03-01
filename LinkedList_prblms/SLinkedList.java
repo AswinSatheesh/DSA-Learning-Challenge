@@ -167,6 +167,24 @@ public class SLinkedList { //Class
         }
     }
 
+    public void minNode(){ //This is how we find the minimum node form the list.
+        Node current = head;
+        int min;
+
+        if(head == null){
+            System.out.println("List is empty.");
+        }else{
+            min = head.data;
+            while(current != null){
+                if(min > current.data){
+                    min = current.data;
+                }
+                current = current.next;
+            }
+            System.out.println("Minimum value node in the list: " + min);
+        }
+    }
+
     public void display(){  // TO display all nodes
         Node current = head;
 
@@ -188,8 +206,8 @@ public class SLinkedList { //Class
 
         public static void main(String[] args) {
             SLinkedList sList = new SLinkedList(); //Creating objects to call the methods inside
-            sList.addNode(1);  // adding nodes
-            sList.addNode(2);
+            sList.addNode(11);  // adding nodes
+            sList.addNode(12);
             sList.addNode(60);
             sList.addNode(3);
             sList.addNode(4);
@@ -198,35 +216,38 @@ public class SLinkedList { //Class
             System.out.println("Original Linked List :");
             sList.display();  // calling display function to display all nodes
 
-            System.out.println("No of nodes present in this LinkedList is : " + sList.countNode());
+            // System.out.println("No of nodes present in this LinkedList is : " + sList.countNode());
 
-            System.out.println();
+            // System.out.println();
 
-            System.out.println("Reversed List is : " );
-            sList.reverse(sList.head);
+            // System.out.println("Reversed List is : " );
+            // sList.reverse(sList.head);
 
-            System.out.println();
+            // System.out.println();
 
-            System.out.println("First node removed!!");
-            sList.deleteFromStrart();
-            sList.display();
+            // System.out.println("First node removed!!");
+            // sList.deleteFromStrart();
+            // sList.display();
            
-            System.out.println("Total count is : " + size);
-            // int size = sList.countNode();
+            // System.out.println("Total count is : " + size);
+            // // int size = sList.countNode();
 
-            sList.deleteFromMiddle();
-            sList.display();
+            // sList.deleteFromMiddle();
+            // sList.display();
 
-            System.out.println("Total count is : " + size);
+            // System.out.println("Total count is : " + size);
 
-            sList.deleteFromEnd();
-            sList.display();
+            // sList.deleteFromEnd();
+            // sList.display();
 
-            sList.addAtStart(15);
-            sList.display();
+            // sList.addAtStart(15);
+            // sList.display();
 
-            sList.searchNode(15);
-            sList.searchNode(60);
+            // sList.searchNode(15);
+            // sList.searchNode(60);
+
+            sList.minNode();
+
         }
 
 }
