@@ -13,7 +13,7 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
 
     Node head, tail = null;
 
-    public void addElem(int data){
+    public void addElem(int data){ // This is how we add nodes to the doubly linked list.
         Node newNode = new Node(data);
 
         if(head == null){
@@ -26,6 +26,23 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
             newNode.prev = tail;
             tail = newNode;
             tail.next = null;
+        }
+    }
+
+    public void AddNodeInBeginning(int data){
+        Node newNode = new Node(data);
+
+        if(head == null){
+            head = newNode;
+            tail = newNode;
+            head.prev = null;
+            tail.next = null;
+        }
+        else{
+            head.prev = newNode;
+            newNode.next = head;
+            newNode.prev =  null;
+            head = newNode;
         }
     }
 
@@ -53,6 +70,12 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
        
        System.out.println("Original linkedList is : ");
 
+       Dlist.display();
+
+       System.out.println();
+
+       System.out.println("New node added at the beginning.");
+       Dlist.AddNodeInBeginning(60);
        Dlist.display();
        
    }
