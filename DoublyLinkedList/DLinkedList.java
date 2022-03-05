@@ -12,7 +12,7 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
 }
 
     Node head, tail = null;
-
+    // int count = 0;
     public void addElem(int data){ // This is how we add nodes to the doubly linked list.
         Node newNode = new Node(data);
 
@@ -27,6 +27,8 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
             tail = newNode;
             tail.next = null;
         }
+        // count++;
+        
     }
 
     public void AddNodeInBeginning(int data){ //This is how wer add node at the beginning.
@@ -62,6 +64,15 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
             tail.next = null;
         }
     }
+    
+    public void displayReverse(){ // This is how we display node in a reverse order.
+        Node temp = tail;
+        while(temp != null){
+            System.out.print(temp.data + " ");
+            temp = temp.prev;
+        }
+    }
+
 
     public void display(){
         Node current = head;
@@ -80,26 +91,30 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
 
    public static void main(String[] args) {
         DLinkedList Dlist = new DLinkedList();
-        Dlist.addElem(5);
-        Dlist.addElem(6);
-        Dlist.addElem(4);
+        Dlist.addElem(1);
         Dlist.addElem(2);
+        Dlist.addElem(3);
+        
        
        System.out.println("Original linkedList is : ");
 
        Dlist.display();
 
-       System.out.println();
+    //    System.out.println();
 
-       System.out.println("New node added (60) at the beginning.");
-       Dlist.AddNodeInBeginning(60);
-       Dlist.display();
+    //    System.out.println("New node added (60) at the beginning.");
+    //    Dlist.AddNodeInBeginning(60);
+    //    Dlist.display();
 
-       System.out.println();  //creating a space between the lines
+    //    System.out.println();  //creating a space between the lines
 
-       System.out.println("New node added (90) at the end.");
-       Dlist.AddNodeAtEnd(90);
-       Dlist.display();
+    //    System.out.println("New node added (90) at the end.");
+    //    Dlist.AddNodeAtEnd(90);
+    //    Dlist.display();
+       
+    //    System.out.println();
+    //    System.out.println("Reverse order :");
+    //    Dlist.displayReverse(); // print Linkedlist in a reverse order.
        
    }
 
