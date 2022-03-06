@@ -12,7 +12,7 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
 }
 
     Node head, tail = null;
-    // int count = 0;
+    public int count = 0;
     public void addElem(int data){ // This is how we add nodes to the doubly linked list.
         Node newNode = new Node(data);
 
@@ -64,6 +64,51 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
             tail.next = null;
         }
     }
+
+    public void AddNewNode(int data){ //This is to add a new node into the list.
+        Node newNode = new Node(data);
+        if (head == null){
+            addElem(data);
+        }
+        else{
+            AddNodeAtEnd(data);
+        }
+        count++;
+    }
+
+    public void addNodeToSpecifiedPosition(int pos, int data){ //This is how we add new node in a specified location.
+        Node newnode = new Node(data);
+
+        if(head == null){
+            System.out.println("Specified location is  not available.");
+        }
+        else{
+            if(pos == count + 1){
+                AddNodeAtEnd(data);
+            }
+            else if(pos == 1){
+                AddNodeInBeginning(data);
+            }
+            else{
+
+                Node  current  = head;
+                Node temp = null;
+
+                for(int i = 1; i < pos -1; i++){
+                    current = current.next;
+                }
+
+                temp = current.next;
+                temp.prev = current;
+
+                current.next = newnode;
+                newnode.prev = current;
+                newnode.next = temp;
+                temp.prev = newnode;
+            }
+            count++;
+        }
+    }
     
     public void displayReverse(){ // This is how we display node in a reverse order.
         Node temp = tail;
@@ -91,9 +136,9 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
 
    public static void main(String[] args) {
         DLinkedList Dlist = new DLinkedList();
-        Dlist.addElem(1);
-        Dlist.addElem(2);
-        Dlist.addElem(3);
+        Dlist.AddNewNode(1);
+        Dlist.AddNewNode(2);
+        Dlist.AddNewNode(3);
         
        
        System.out.println("Original linkedList is : ");
@@ -115,6 +160,11 @@ public class DLinkedList {  //This is how doubly LinkedList create and add data 
     //    System.out.println();
     //    System.out.println("Reverse order :");
     //    Dlist.displayReverse(); // print Linkedlist in a reverse order.
+    
+    System.out.println();
+    System.out.println("This is how the list looks like, after we added the new node at specified position:  ");
+    Dlist.addNodeToSpecifiedPosition(3, 5);
+    Dlist.display();
        
    }
 
