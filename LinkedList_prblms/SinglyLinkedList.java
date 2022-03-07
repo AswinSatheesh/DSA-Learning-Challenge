@@ -34,6 +34,24 @@ public class SinglyLinkedList {
             tail = newNode;    
         }    
     }    
+
+    public void removeDuplicates(){ //This is how we remove duplicate nodes from the list.  (brototype = ds challenge 12:10)
+        Node current = head;
+
+        while(current != null){
+            Node next = current.next;
+            while(next != null && current.data == next.data){
+                next = next.next;
+            }
+            current.next = next;
+
+            if(next == tail && current.data == next.data){
+                tail = current;
+                tail.next = null;
+            }
+            current = next;
+        }
+    }
         
     //display() will display all the nodes present in the list    
     public void display() {    
@@ -60,10 +78,18 @@ public class SinglyLinkedList {
         //Add nodes to the list    
         sList.addNode(1);    
         sList.addNode(2);    
+        sList.addNode(3); 
+        sList.addNode(3); 
         sList.addNode(3);    
         sList.addNode(4);    
+        sList.addNode(4);  
             
         //Displays the nodes present in the list    
         sList.display();    
+
+        System.out.println();
+        System.out.println("After removing duplicates, list looks like : ");
+        sList.removeDuplicates();
+        sList.display();
     }    
 }    
