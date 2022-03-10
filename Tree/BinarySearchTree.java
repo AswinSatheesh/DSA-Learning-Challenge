@@ -12,7 +12,7 @@ public class BinarySearchTree {
 
     Node root;
 
-    public void insert(int data){
+    public void insert(int data){ //This is how we insert data into the tree.
         Node currentNode = root;
         if(currentNode == null){
             root = new Node(data);
@@ -37,12 +37,34 @@ public class BinarySearchTree {
         }
     }
 
-    public boolean contains(int data){
+    public boolean contains(int data){ // This is how we check whether the node is present or not in the tree.
         Node currentNode = root;
+        while(currentNode != null){
+            if(data < currentNode.data){
+                currentNode = currentNode.left;
+            }
+            else if(data > currentNode.data){
+                currentNode = currentNode.right;
+            }
+            else{
+                return true;
+            }
+        }
         return false;
     }
 
     public void remove(int data){
 
+    }
+
+    
+
+    public static void main(String[] args) {
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.insert(10);
+        tree.insert(8);
+        tree.insert(11);
+        
+        System.out.println(tree.contains(66));
     }
 }
