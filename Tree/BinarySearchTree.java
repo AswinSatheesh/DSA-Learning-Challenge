@@ -58,7 +58,7 @@ public class BinarySearchTree {
     }
 
 
-    public void removeHelper(int data, Node currentNode, Node parentNode){
+    public void removeHelper(int data, Node currentNode, Node parentNode){  //Helper function
         while(currentNode != null){
             if(data < currentNode.data){
                 parentNode = currentNode;
@@ -107,6 +107,8 @@ public class BinarySearchTree {
             return getMinValue(currentNode.left);
         }
     }
+
+     // Here we start the traverse part.
 
     public void inOrder(){
         inOrderHelper(root);
