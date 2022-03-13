@@ -59,12 +59,12 @@ public class MinHeap {
 
     public void remove(){  //while removing nodes from the heap - we have to remove it from the top.
         Collections.swap(heap, 0, heap.size()-1);
-        heap.remove(heap.size()-1);
+        heap.remove(heap.size()-1); //ArrayList property  (we created a Arraylist called 'heap' and calling its inbuilt functions - remove)
         shiftDown(0);
     }
 
     public void insert(int value){
-        heap.add(value);
+        heap.add(value); //Arraylist inbuilt functions add(to add values into the ArrayList)
         shiftUp(heap.size()-1);
     }
 
