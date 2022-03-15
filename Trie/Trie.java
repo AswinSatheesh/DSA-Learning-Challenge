@@ -1,3 +1,6 @@
+//source : Brototype DSA tutorial Part -16 
+//SUffiix-Problem
+
 package Trie;
 
 import java.util.HashMap;
@@ -49,6 +52,9 @@ public class Trie {
 
     public static void main(String[] args) {
         Trie trie = new Trie("mannan");
-        System.out.println(trie.contains("nan"));
+        System.out.println(trie.contains("nan"));  //This is where we are checking that word is in the Trie or not.
+        System.out.println(trie.contains("nnan"));
+        System.out.println(trie.contains("n"));
     }
+    
 }
