@@ -1,5 +1,5 @@
 //source : Brototype DSA tutorial Part -16 
-//SUffiix-Problem
+//SUffiix-Trie-Problem
 
 package Trie;
 
