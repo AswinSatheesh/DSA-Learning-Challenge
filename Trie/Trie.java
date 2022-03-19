@@ -44,7 +44,7 @@ public class Trie {
             if(!node.children.containsKey(letter)){  //it means word is not there
                 return false; 
             }
-            node = node.children.get(letter); //if word is there this will work.
+            node = node.children.get(letter); //if word is there this will work. 
         }
         return node.children.containsKey(endSymbol);
     }
