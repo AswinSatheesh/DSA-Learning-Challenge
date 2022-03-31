@@ -54,7 +54,7 @@ public class Trie {
         Trie trie = new Trie("mannan");
         System.out.println(trie.contains("nan"));  //This is where we are checking that word is in the Trie or not.
         System.out.println(trie.contains("nnan"));
-        System.out.println(trie.contains("n"));
+        System.out.println(trie.contains("nn"));
     }
     
 }
